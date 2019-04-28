@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int x, j, temp;
+    int a, b, c;
+    int maxNumber = 0;
+    int arr[4];
+    for(int i = 0; i < 4; i++){
+        cin >> x;
+        arr[i] = x;
+        if(x > maxNumber){
+            maxNumber = x;
+        }
+    }
+
+    for(int i=0;i<4;i++)
+    {       
+        for(j=i+1;j<4;j++)
+        {
+            if(arr[i]>arr[j])
+            {
+                temp  =arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+            }
+        }
+    }
+
+    a = maxNumber - arr[0];
+    b = maxNumber - arr[1];
+    c = maxNumber - arr[2]; 
+
+    cout << a << " "; 
+    cout << b << " " ;
+    cout << c;
+
+    return 0;
+}
